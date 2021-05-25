@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go! Fiber</title>
+</head>
+<body>
+    <h1>Lista de carros</h1>
+    <p>A lista deverá aparecer aqui</p>
+    <div class="lista">
+        Essa frase motivacional foi passada por parâmetro para o <br>
+        Go standard HTML template engine: {{.Frase}} <br>
+        {{.Marca}}
+        {{.Nome}}        
+        {{.Cor}}
+    </div>
+    <br>
+    <br>
+    <h2>Cadastrar carro</h2>
+    <form action="/carros" method="POST">
+        <table>
+            <tr>
+                <td>Marca do Carro:</td>
+                <td><input type="text" name="marca" id="marca"></td>
+            </tr>
+            <tr>
+                <td>Nome do Carro: </td>
+                <td><input type="text" name="nome" id="nome"></td>
+            </tr>
+            <tr>
+                <td>
+                Cor do carro:
+                </td>
+                <td>
+                    <input type="text" name="cor" id="cor">
+                </td>
+        </tr>
+        <tr><td>
+            <input type="submit" value="Enviar">
+        </td></tr>
+        </table>
+    </form>
+
+</body>
+</html>
