@@ -6,7 +6,7 @@
 **With this code I learnt how to set up my Fiber Web Server to serve HTML files using Go HTML Template Engine**
 
 ----------
-##### This web application simply aimplements a CRUD with MySql Database to manage Car "objects"
+##### This web application simply implements a CRUD with MySql Database to manage Car "objects"
 [![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
 
 ----------
