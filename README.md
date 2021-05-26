@@ -2,6 +2,7 @@
 ----------
 ![Go logo](./public/images/go-logo-blue.svg)
 ![Fiber logo](https://gblobscdn.gitbook.com/spaces%2F-M-XEvRn3rhe8BDVGkss%2Favatar-rectangle.png?alt=media)
+
 **With this code I learnt how to set up my Fiber Web Server to serve HTML files using Go HTML Template Engine**
 
 ----------
