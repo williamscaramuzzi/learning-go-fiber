@@ -4,5 +4,4 @@
 
 ----------
 This web application simply accepts car attributes from the user, then creates a car instance on the server side, and returns the cars page with the newly created car info.
-
-#🚗
+🚗

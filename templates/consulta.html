@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/styles/global.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=KoHo&display=swap" rel="stylesheet">
+    <title>Carros Golang</title>
+</head>
+
+<body>
+    {{template "navbar"}}
+    <h1>Busque um Carro!!!</h1>
+    <img src="../public/images/car.jpg" alt="Carro">
+    <h4>Digite os dados abaixo (ou deixe em branco se preferir):</h4>
+    <form action="/consulta" method="POST">
+        <table>
+            <tr>
+                <td>Marca do Carro:</td>
+                <td><input type="text" name="marca" id="marca"></td>
+            </tr>
+            <tr>
+                <td>Nome do Carro: </td>
+                <td><input type="text" name="nome" id="nome"></td>
+            </tr>
+            <tr>
+                <td>
+                    Cor do carro:
+                </td>
+                <td>
+                    <input type="text" name="cor" id="cor">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Consultar">
+                </td>
+            </tr>
+        </table>
+    </form>
+    {{if .Lista}}
+    <table class="tableresults">
+        <thead>
+            <th>Apagar</th>
+            <th>Editar</th>
+            <th>Marca</th>
+            <th>Nome</th>
+            <th>Cor</th>
+        </thead>
+        <tbody>
+            {{range .Lista}}
+            <!-- depois do comando anterior, cada elemento da Lista está no . 
+        Portanto se eu fizer .Nome ou .Cor eu pego o atributo do elemento-->
+            <tr>
+                <td><button onclick=deleteCarro(this)>Apagar</button></td>
+                <td><button>Editar</button></td>
+                <td>{{.Marca}}</td>
+                <td>{{.Nome}}</td>
+                <td>{{.Cor}}</td>
+            </tr>
+            {{end}}
+        </tbody>
+    </table>
+    {{end}}
+</body>
+<script>
+    /**
+     * @param {HTMLButtonElement}  botaoApagar
+    */
+    async function deleteCarro(botaoApagar) {
+        let carro = { carro_uuid: "", marca: "", nome: "", cor: "", created_at: "" }
+        var tr = botaoApagar.parentElement.parentElement;
+
+        if (tr.hasChildNodes) {
+            var filhos = tr.childNodes;
+            carro.marca = filhos[5].innerText;
+            carro.nome = filhos[7].innerText;
+            carro.cor = filhos[9].innerText;
+            console.log(carro);
+            let parametroDoFetch = {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(carro)
+            }
+            await fetch("/consulta", parametroDoFetch).then(response => {
+                var status = response.ok;
+                if(status){
+                    window.location.reload();
+                    alert("Carro " + carro.nome + " deletado!")
+                }
+
+            })
+            
+        }
+    }
+</script>
+
+</html>

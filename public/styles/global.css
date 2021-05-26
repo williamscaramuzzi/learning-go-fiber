@@ -1,0 +1,56 @@
+html {
+    height: 100%;
+    font-family: 'KoHo', sans-serif;    
+}
+nav {
+    margin-left: -5px;
+    width: 100%;
+    background-image: linear-gradient(rgb(49, 49, 49), rgb(0,0,0));
+    overflow: auto;
+}
+nav a {
+    float: left;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    width: 20%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+    text-align: center; /* If you want the text to be centered */
+}
+/* Add a background color on mouse-over */
+.navbar a:hover {
+    background-color: #000;
+  }
+  
+  /* Style the current/active link */
+  .navbar a.active {
+    background-color: #044caa;
+    
+  }
+  body {   
+    color: black;
+    height: 100%;
+    margin-top: 0;
+    margin-left: 5px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: linear-gradient(to top right, rgb(243, 239, 239), rgb(231, 231, 238));    
+  }
+
+  .tableresults {
+    border-collapse: collapse;
+    width: 50%;
+  }
+  .tableresults td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  .tableresults tr:nth-child(even){background-color: #f2f2f2;}
+  .tableresults tr:hover {background-color: #ddd;}
+  .tableresults th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4c4eaf;
+    color: white;
+  }

@@ -4,44 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Go! Fiber</title>
+    <link rel="stylesheet" href="../public/styles/global.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=KoHo&display=swap" rel="stylesheet">
+    <title>Carros Golang</title>
 </head>
 <body>
-    <h1>Lista de carros</h1>
-    <p>A lista deverá aparecer aqui</p>
+    {{template "navbar"}}
+    <h1>Cadastro de carros</h1>    
     <div class="lista">
-        Essa frase motivacional foi passada por parâmetro para o <br>
-        Go standard HTML template engine: {{.Frase}} <br>
-        {{.Marca}}
-        {{.Nome}}        
-        {{.Cor}}
+        <img src="../public/images/car1.jpg" alt="carro farol">
+        <br>
+        <span>Último carro inserido:</span>
+        <strong>{{.Marca}} {{.Nome}} {{.Cor}}</strong>        
     </div>
-    <br>
-    <br>
-    <h2>Cadastrar carro</h2>
-    <form action="/carros" method="POST">
-        <table>
-            <tr>
-                <td>Marca do Carro:</td>
-                <td><input type="text" name="marca" id="marca"></td>
-            </tr>
-            <tr>
-                <td>Nome do Carro: </td>
-                <td><input type="text" name="nome" id="nome"></td>
-            </tr>
-            <tr>
-                <td>
-                Cor do carro:
-                </td>
-                <td>
-                    <input type="text" name="cor" id="cor">
-                </td>
-        </tr>
-        <tr><td>
-            <input type="submit" value="Enviar">
-        </td></tr>
-        </table>
-    </form>
 
+    <h2>Cadastrar carro</h2>
+    <div class="formfoto">        
+        <form action="/carros" method="POST">
+            <table>
+                <tr>
+                    <td>Marca do Carro:</td>
+                    <td><input type="text" name="marca" id="marca"></td>
+                </tr>
+                <tr>
+                    <td>Nome do Carro: </td>
+                    <td><input type="text" name="nome" id="nome"></td>
+                </tr>
+                <tr>
+                    <td>
+                    Cor do carro:
+                    </td>
+                    <td>
+                        <input type="text" name="cor" id="cor">
+                    </td>
+            </tr>
+            <tr><td>
+                <input type="submit" value="Cadastrar">
+            </td></tr>
+            </table>
+        </form>
+        
+    </div>  
 </body>
 </html>
