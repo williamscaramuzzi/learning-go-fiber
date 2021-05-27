@@ -7,6 +7,9 @@
 
 ----------
 ##### This web application simply implements a CRUD with MySql Database to manage Car "objects"
+![Screenshot1](./public/images/Screenshot_1.jpg)
+![Screenshot2](./public/images/Screenshot_2.jpg)
+![Screenshot3](./public/images/Screenshot_3.jpg)
 [![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
 
 ----------
